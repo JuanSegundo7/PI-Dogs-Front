@@ -1,0 +1,9 @@
+#trash-can{
+    transition: 0.3s;
+}
+
+#trash-can:hover{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    fill: #D0342C;
+    transition: 0.3s;
+}

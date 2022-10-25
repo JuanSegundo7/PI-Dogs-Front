@@ -1,0 +1,48 @@
+#Pagination{
+    background-color: var(--background-color-top);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#Pagination ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1em;
+}
+
+
+#Pagination li{
+    width: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    margin: 0.5em;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    transition: all 0.4s;
+    color: #fff;
+}
+
+#Pagination li:hover{
+    cursor: pointer;
+    background-color: #58abf6;
+}
+
+@media (min-width: 1000px){
+    #Pagination{
+        height: 5em;
+    }
+    #Pagination ul{
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+}
+

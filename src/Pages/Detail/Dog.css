@@ -1,0 +1,154 @@
+#Detail{
+    background-color: var(--background-color);
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#Detail svg{
+    fill: #fff;
+    width: 1.5em;
+}
+
+#Detail svg:hover{
+    cursor: pointer;
+}
+
+#Detail a{
+    text-align: left;
+    width: 1.5em;
+    margin: 0.5em 0;
+}
+
+#detail-article{
+    background-color: var(--background-color-top);
+    padding: 1em;
+    border-radius: 15px;
+    width: 86vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#flex-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#flex-info, #flex-image{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+}
+
+#flex-info{
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0.5em;
+}
+
+
+.flex-values{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flex-height-weight{
+    display: flex;
+    flex-direction: row;
+    max-width: 32em;
+    width: 100%;
+    justify-content: center;
+}
+
+.flex-height-weight svg{
+    margin-left: 0.5em;
+}
+
+.flex-values h1{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    color: #58abf6;
+    margin: 0.5em 0;
+}
+
+.flex-values p{
+    font-size: 22px;
+    margin: 0.5em 0.2em;
+}
+
+.flex-values-temp{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+#detail-article img{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    border-radius: 15px;
+}
+
+#detail-article img:hover{
+    transform: scale(1.05) translate(0px,-10px);
+    box-shadow: 0px 0px 74px -8px rgba(255,255,255,0.10);
+    transition: 0.5s;
+
+}
+
+#detail-article figure{
+    width: 100%;
+    height: 100%;
+    max-width: 30em;
+    border-radius: 15px;
+    margin: 0.5em 0;
+}
+
+.span-form{
+    background-color: #58abf6;
+    margin: 0.5em;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+}
+
+#flex-icons{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#Detail .metronome{
+    top: 0;
+}
+
+@media (min-width: 1000px){
+    #flex-detail{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #detail-article figure{
+        width: 100%;
+        max-width: 30em;
+        margin: 1em 0;
+    }
+}

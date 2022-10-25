@@ -1,0 +1,108 @@
+#Header{
+    width: 100%;
+    position: relative;
+    background-color: var(--background-color-top);
+    height: 5em;
+    z-index: 97;
+    display: flex;
+    width:100%; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+#Header nav{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 0 2em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Header a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.active {
+    color: var(--green);
+}
+
+#back{
+    color: #fff;
+    font-size: 40px;
+}
+
+.nombre img{
+    width: 100%;
+    filter: invert(100%);
+    max-width: 3.5em;
+}
+
+#rigth-side{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+
+nav ul{ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;  
+}
+
+#create{
+    padding: 1rem 2rem;
+    background-color: #58abf6;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#burger-article article{
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#star{
+    width: 2em;
+    margin: 1em;
+    fill: #fff;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#star:hover{
+    transition: all 0.5s;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    fill: rgb(250, 225, 4);
+}
+
+
+@media (min-width: 1000px){
+    #Header nav{
+        padding: 0 5.5em;
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+  }
+}
