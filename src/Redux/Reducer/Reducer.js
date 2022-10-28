@@ -32,10 +32,10 @@ const rootReducer = (state = initialState, action) => {
             }
         }
         case GET_QUERY: {
-            console.log(action.payload)
             return {
                 ...state,
                 filter: true,
+                changeNumber: state.changeNumber + 1,
                 filtered: action.payload
             }
         }

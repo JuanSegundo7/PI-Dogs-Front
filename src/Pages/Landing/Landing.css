@@ -93,7 +93,7 @@
         rgba(87,111,230,1) 25%, 
         #aa8fd8 51%, 
         #e058a5 100%
-    );  
+    ); 
   animation: AnimateBG 10s ease infinite;
 }
 

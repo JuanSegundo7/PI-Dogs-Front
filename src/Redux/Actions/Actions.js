@@ -14,14 +14,16 @@ export const CLEAR_FILTER = "CLEAR_FILTER";
 export const NO_FOUND_DOG = "NO_FOUND_DOG";
 export const ADD_FAVORITE = "ADD_FAVORITE";
 export const COPY_DOGS = "COPY_DOGS";
+export const DELETE_DOG = "DELETE_DOG";
 
-const baseUrl = "http://localhost:3001/dogs"
-const baseUrlTemps = "http://localhost:3001/temperaments"
+// const baseUrl = "http://localhost:3001/dogs"
+// const baseUrlTemps = "http://localhost:3001/temperaments"
+const baseUrl = "https://pi-dogs-back-production-3591.up.railway.app/dogs"
+const baseUrlTemps = "https://pi-dogs-back-production-3591.up.railway.app/temperaments"
 
-export const postDog = (obj) => dispatch => {
+export const postDog = (obj) => {
     try{
         axios.post(baseUrl,obj)
-        .then(console.log(obj))
         return ({type: POST_DOG})
     }catch(e){
         console.log(e)
@@ -95,4 +97,13 @@ export const clearFilter = () => dispatch => {
 
 export const copyDogs = () => dispatch => {
     return dispatch({type: COPY_DOGS})
+}
+
+export const deleteDog = (id) => {
+    try{
+        axios.post(`${baseUrl}/delete`,id)
+        return ({type: DELETE_DOG})
+    }catch(e){
+        console.log(e)
+    }
 }

@@ -1,11 +1,17 @@
 import React from 'react';
 import "./Eliminate.css"
-import { useDispatch,useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { deleteDog } from "../../Redux/Actions/Actions"
+import { useNavigate } from "react-router-dom"
 
 const Eliminate = (id) => {
+    const history = useNavigate()
+    const dispatch = useDispatch()
 
     const handleEliminate = () => {
-
+        dispatch(deleteDog(id))
+        history("/home")
+        return alert("The dog was successfully removed")
     }
 
     return (

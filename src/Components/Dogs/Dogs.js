@@ -22,9 +22,13 @@ export default function Dogs({setDog}) {
 
     const currentDogs = Filter ? (typeof Filtered[0] === "string" ? Filtered : Filtered.slice(indexFirstDog, indexLastDog)) : Dogs.slice(indexFirstDog, indexLastDog)
     
+    console.log(Filtered)
+    console.log(Filter)
+
     useEffect(() => {
       dispatch(getAllDogs())
       dispatch(paginationValues({dogsPerPage, setCurrentPage}))
+      setCurrentPage(1)
     }, [dispatch, setCurrentPage, Number])
     
     return <article id="flex-dogs"> 

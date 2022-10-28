@@ -9,17 +9,9 @@ export default function Favorite({id, star}) {
 
     const dispatch = useDispatch()
 
-    
-    // const favoriteFilter = () => {
-    //     return Favorites.filter((favorite) => favorite === id)
-    // }
-    
-    console.log(Favorites)
-
     const handleFavorite = () => {  
 
         if(Favorites.includes(id)) { 
-            console.log("llegue")
             setState(0)
             return Favorites.filter(favorite => favorite == id)
         }

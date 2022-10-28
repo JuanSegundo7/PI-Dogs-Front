@@ -40,14 +40,11 @@ export default function Form({setState}) {
         }
 
         if(error === false) {
-            console.log("llegue 3")
             dispatch(postDog(dataDog))
             dispatch(getAllDogs())
             setState(false)
         }
     }
-
-    console.log(error.temperaments, "errorTemps")
 
     const handleName = (e) => {
         const value = e.target.value
@@ -94,11 +91,11 @@ export default function Form({setState}) {
         
         
         if (parseFloat(form.min_height) === 0) errors.min_height.minHeight0 = "Min height value can not be 0"
-        if (parseFloat(form.max_height) === 0) errors.max_height.maxHeight0 = "Man height value can not be 0"
+        if (parseFloat(form.max_height) === 0) errors.max_height.maxHeight0 = "Max height value can not be 0"
         if (parseFloat(form.min_weight) === 0) errors.min_weight.minWeight0 = "Min weight value can not be 0"
         if (parseFloat(form.max_weight) === 0) errors.max_weight.maxWeight0 = "Max weight value can not be 0"
-        if (parseFloat(form.min_life_span) === 0) errors.min_life_span.minLifet0 = "Min life span value can not be 0"
-        if (parseFloat(form.max_life_span) === 0) errors.max_life_span.maxLifet0 = "Max life span value can not be 0"
+        if (parseFloat(form.min_life_span) === 0) errors.min_life_span.minLife0 = "Min life span value can not be 0"
+        if (parseFloat(form.max_life_span) === 0) errors.max_life_span.maxLife0 = "Max life span value can not be 0"
         
         
         if (parseFloat(form.min_height) > parseFloat(form.max_height)) errors.min_height.heigthMin = "Min height can not be greater than max height"
@@ -129,7 +126,7 @@ export default function Form({setState}) {
             <form onSubmit={handleSubmit} id="Form">
                 <fieldset id="flex-form-row">
                     <fieldset className="flex-form-values">
-                        <input type="text" name="name" value={form.name} onChange={handleName} placeholder="Name" className="input" id={error.name && Object.keys(error.name).length > 0 ? "error-input" : null}/>
+                        <input type="text" autoComplete="off" name="name" value={form.name} onChange={handleName} placeholder="Name" className="input" id={error.name && Object.keys(error.name).length > 0 ? "error-input" : null}/>
                         {error.name && Object.keys(error.name).length > 0 ? 
                         <ul>
                             {error.name && error.name.nameRequired && <li className="error">{error.name.nameRequired}</li>}
@@ -138,46 +135,52 @@ export default function Form({setState}) {
                             {error.name && error.name.nameInclude && <li className="error">{error.name.nameInclude}</li>}
                         </ul> : null}
                 
-                        <input type="text" name="min_height" value={form.min_height} onChange={handleName} placeholder="Min Heigth" className="input" id={error.min_height && Object.keys(error.min_height).length > 0 ? "error-input" : null}/>
+                        <input type="text" autoComplete="off" name="min_height" value={form.min_height} onChange={handleName} placeholder="Min Heigth" className="input" id={error.min_height && Object.keys(error.min_height).length > 0 ? "error-input" : null}/>
                         {error.min_height && Object.keys(error.min_height).length > 0 ? 
                         <ul>
                             {error.min_height.minHeightEmpty && <li className="error">{error.min_height.minHeightEmpty}</li>}
                             {error.min_height.heightEmpty && <li className="error">{error.min_height.heightEmpty}</li>}
                             {error.min_height.heigthMin && <li className="error">{error.min_height.heigthMin}</li>}
+                            {error.min_height.minHeight0 && <li className="error">{error.min_height.minHeight0}</li>}
                         </ul> : null}
                 
-                        <input type="text" name="min_weight" value={form.min_weight} onChange={handleName} placeholder="Min Weight" className="input" id={error.min_weight && Object.keys(error.min_weight).length > 0 ? "error-input" : null}/>
+                        <input type="text" autoComplete="off" name="min_weight" value={form.min_weight} onChange={handleName} placeholder="Min Weight" className="input" id={error.min_weight && Object.keys(error.min_weight).length > 0 ? "error-input" : null}/>
                         {error.min_weight && Object.keys(error.min_weight).length > 0 ? 
                         <ul>
-                            {error.min_weight && error.min_weight.minWeightEmpty && <li className="error">{error.min_weight.minWeightEmpty}</li>}
-                            {error.min_weight && error.min_weight.weightMin && <li className="error">{error.min_weight.weightMin}</li>}
+                            {error.min_weight.minWeightEmpty && <li className="error">{error.min_weight.minWeightEmpty}</li>}
+                            {error.min_weight.weightMin && <li className="error">{error.min_weight.weightMin}</li>}
+                            {error.min_weight.minWeight0 && <li className="error">{error.min_weight.minWeight0}</li>}
                         </ul> : null} 
 
-                        <input type="text" name="min_life_span" value={form.min_life_span} onChange={handleName} placeholder="Min Life Span" className="input" id={error.min_life_span && Object.keys(error.min_life_span).length > 0 ? "error-input" : null}/>
+                        <input type="text" autoComplete="off" name="min_life_span" value={form.min_life_span} onChange={handleName} placeholder="Min Life Span" className="input" id={error.min_life_span && Object.keys(error.min_life_span).length > 0 ? "error-input" : null}/>
                         {error.min_life_span && Object.keys(error.min_life_span).length > 0 ? 
                         <ul>
-                            {error.min_life_span && error.min_life_span.minLifeEmpty && <li className="error">{error.min_life_span.minLifeEmpty}</li>}
-                            {error.min_life_span && error.min_life_span.lifeMin && <li className="error">{error.min_life_span.lifeMin}</li>}
+                            {error.min_life_span.minLifeEmpty && <li className="error">{error.min_life_span.minLifeEmpty}</li>}
+                            {error.min_life_span.lifeMin && <li className="error">{error.min_life_span.lifeMin}</li>}
+                            {error.min_life_span.minLife0 && <li className="error">{error.min_life_span.minLife0}</li>}
                         </ul> : null}          
                         
                     
                     </fieldset>
                     <fieldset className="flex-form-values">
-                        <input type="text" name="image" value={form.image} onChange={handleName} placeholder="Image url" className="input"/>
-                        <input type="text" name="max_height" value={form.max_height} onChange={handleName} placeholder="Max Heigth" className="input" id={error.max_height && Object.keys(error.max_height).length > 0 ? "error-input" : null}/>
+                        <input type="text" autoComplete="off" name="image" value={form.image} onChange={handleName} placeholder="Image url" className="input"/>
+                        <input type="text" autoComplete="off" name="max_height" value={form.max_height} onChange={handleName} placeholder="Max Heigth" className="input" id={error.max_height && Object.keys(error.max_height).length > 0 ? "error-input" : null}/>
                         {error.max_height && Object.keys(error.max_height).length > 0 ? 
                         <ul>
-                            {error.max_height && error.max_height.maxHeightEmpty && <li className="error">{error.max_height.maxHeightEmpty}</li>}
+                            {error.max_height.maxHeightEmpty && <li className="error">{error.max_height.maxHeightEmpty}</li>}
+                            {error.max_height.maxHeight0  && <li className="error">{error.max_height.maxHeight0}</li>}
                         </ul> : null}
-                        <input type="text" name="max_weight" value={form.max_weight} onChange={handleName} placeholder="Max Weight" className="input" id={error.max_weight && Object.keys(error.max_weight).length > 0 ? "error-input" : null}/>
+                        <input type="text" autoComplete="off" name="max_weight" value={form.max_weight} onChange={handleName} placeholder="Max Weight" className="input" id={error.max_weight && Object.keys(error.max_weight).length > 0 ? "error-input" : null}/>
                         {error.max_weight && Object.keys(error.max_weight).length > 0 ?  
                         <ul>
-                            {error.max_weight && error.max_weight.maxWeightEmpty && <li className="error">{error.max_weight.maxWeightEmpty}</li>}
+                            {error.max_weight.maxWeightEmpty && <li className="error">{error.max_weight.maxWeightEmpty}</li>}
+                            {error.max_weight.maxWeight0 && <li className="error">{error.max_weight.maxWeight0}</li>}
                         </ul> : null}
-                        <input type="text" name="max_life_span" value={form.max_life_span} onChange={handleName} placeholder="Max Life Span" className="input" id={error.max_life_span && Object.keys(error.max_life_span).length > 0 ? "error-input" : null}/>
+                        <input type="text" autoComplete="off" name="max_life_span" value={form.max_life_span} onChange={handleName} placeholder="Max Life Span" className="input" id={error.max_life_span && Object.keys(error.max_life_span).length > 0 ? "error-input" : null}/>
                         {error.max_life_span && Object.keys(error.max_life_span).length > 0 ? 
                         <ul>
-                            {error.max_life_span && error.max_life_span.maxLifeEmpty && <li className="error">{error.max_life_span.maxLifeEmpty}</li>}
+                            {error.max_life_span.maxLifeEmpty && <li className="error">{error.max_life_span.maxLifeEmpty}</li>}
+                            {error.max_life_span.maxLife0  && <li className="error">{error.max_life_span.maxLife0}</li>}
                         </ul> : null}          
                     </fieldset>
                 </fieldset>
