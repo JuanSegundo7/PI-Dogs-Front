@@ -101,7 +101,7 @@ export const copyDogs = () => dispatch => {
 
 export const deleteDog = (id) => {
     try{
-        axios.post(`${baseUrl}/delete`,id)
+        axios.post(`${baseUrl}/delete`, id)
         return ({type: DELETE_DOG})
     }catch(e){
         console.log(e)
