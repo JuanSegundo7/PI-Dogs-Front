@@ -263,7 +263,7 @@
     }
 }
 
-@media (min-width: 1500px) and (min-height: 1000px){
+@media (min-width: 1600px) and (min-height: 1000px){
     
     #rigth-side-landing img {
         max-width: 22em;
@@ -287,5 +287,9 @@
 
     #logos a {
         width: 100px;
+    }
+
+    #button-landing{
+        max-width: 300px;
     }
 }
