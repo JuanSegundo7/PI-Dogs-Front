@@ -3,7 +3,6 @@
     position: relative;
     background-color: var(--background-color-top);
     height: 5em;
-    z-index: 97;
     display: flex;
     width:100%; 
     flex-direction: column;
@@ -23,10 +22,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.active {
-    color: var(--green);
 }
 
 #back{
@@ -56,7 +51,7 @@ nav ul{
 
 #create{
     padding: 1rem 2rem;
-    background-color: #58abf6;
+    background-color: var(--blue);
     font-size: 1rem;
     border-radius: 0.5rem;
     color: #fff;

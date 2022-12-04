@@ -2,13 +2,14 @@
     background-color: var(--background-color);
     width: 100%;
     min-height: 100vh;
-    height: auto;
 }
 
 #flex-dogs{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    margin: 2em 0;
     gap: 15px;
     padding: 0 5%;
     height: 100%;
@@ -34,3 +35,14 @@
     margin: 1em 0;
 }
 
+@media (min-height: 800px){
+    #DogCard  {
+        height: 30vh;
+    }
+    #DogCard img {
+        height: 30vh;
+    }
+    #flex-dogs {
+        min-height: 86vh;
+    }
+}

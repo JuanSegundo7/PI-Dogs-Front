@@ -33,7 +33,7 @@ display: inline-block;
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #58abf6;
+    background-color: var(--blue);
 }
 
 .dropdown:hover, .dropdown-content a:hover {cursor: pointer}
@@ -44,7 +44,7 @@ display: inline-block;
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #58abf6;
+    background-color: var(--blue);
     transition: all 0.5s;
 }
 

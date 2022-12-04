@@ -33,7 +33,7 @@
 
 #Pagination li:hover{
     cursor: pointer;
-    background-color: #58abf6;
+    background-color: var(--blue);
 }
 
 @media (min-width: 1000px){

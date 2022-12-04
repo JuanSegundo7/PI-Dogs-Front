@@ -15,7 +15,6 @@ export default function Form({setState}) {
     
     const [tempsSelected, setTempsSelected] = useState([])
     const [error, setError] = useState({})
-    const [globalError, setGlobalError] = useState(false)
     
     const [form, setForm] = useState({
         name: "",
