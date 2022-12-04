@@ -16,6 +16,7 @@ export const ADD_FAVORITE = "ADD_FAVORITE";
 export const COPY_DOGS = "COPY_DOGS";
 export const DELETE_DOG = "DELETE_DOG";
 
+//hola
 // const baseUrl = "http://localhost:3001/dogs"
 // const baseUrlTemps = "http://localhost:3001/temperaments"
 const baseUrl = "https://pi-dogs-back-production-9a83.up.railway.app/dogs"
