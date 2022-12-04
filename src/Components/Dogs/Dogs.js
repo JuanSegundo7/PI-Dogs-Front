@@ -5,7 +5,7 @@ import { getAllDogs, paginationValues } from "../../Redux/Actions/Actions"
 import DogCard from "./Card/DogCard"
 import Spinner from "../Spinner/Spinner"
 
-export default function Dogs({setDog}) {
+export default function Dogs() {
     const dispatch = useDispatch()
 
     const Dogs = useSelector((state) => state.dogs)
@@ -42,7 +42,7 @@ export default function Dogs({setDog}) {
           )
         }) : currentDogs.map((dog)=> { 
           return(
-            <DogCard key={dog.id} id={dog.id} name={dog.name} url={dog.image} setDog={setDog}/>
+            <DogCard key={dog.id} id={dog.id} name={dog.name} url={dog.image}/>
             )
         }) : null)
       }

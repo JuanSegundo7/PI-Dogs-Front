@@ -24,6 +24,6 @@
 #search-button:hover{
     cursor: pointer;
     color: #fff;
-    background-color: #58abf6;
+    background-color: var(--blue);
     transition: 0.5s;
 }

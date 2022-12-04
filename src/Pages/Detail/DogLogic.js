@@ -18,7 +18,7 @@ const Dog = () => {
 
     console.log(Dog)
 
-    if(Dog) var {id, min_height,max_height,min_weight,max_weight, image, name, origin, life_span, temperaments} = Dog
+    if (Dog) var {id, min_height,max_height,min_weight,max_weight, image, name, origin, life_span, temperaments} = Dog
 
     useEffect(() => {
         dispatch(getOneDog(iD.id))

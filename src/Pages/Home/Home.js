@@ -5,6 +5,7 @@ import Pagination from "../../Components/Pagination/PaginationLogic"
 import Header from "../Header/Header"
 import Filter from "../../Components/Filter/Filter"
 import { getAllDogs } from '../../Redux/Actions/Actions';
+import Help from '../../Components/Help/Help'
 import { useDispatch } from "react-redux"
 
 import './styles/Home.css';
@@ -24,6 +25,7 @@ const Home = () => {
 			<Filter />
 			<DogsComponent/>
 		</section>
+			<Help />
 		<Pagination />
 		</>
 	);

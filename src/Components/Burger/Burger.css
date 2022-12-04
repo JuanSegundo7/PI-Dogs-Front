@@ -45,7 +45,7 @@
     width: 100%;
     min-height: 100vh;
     z-index: 98;
-    background-color: var(--green);
+    background-color: var(--background-color-top);
     transition: 0.8s;
 }
 
@@ -83,7 +83,7 @@
     border-radius: 12px;
     padding: 12px 16px;
     font-weight: 600;
-    background-color: var(--dark-green);
+    background-color: var(--background-color);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #fff;
