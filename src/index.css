@@ -40,6 +40,21 @@ fieldset {
   outline: none;
 }
 
+body::-webkit-scrollbar{
+  width: 2px;
+}
+
+body::-webkit-scrollbar-thumb{
+  background: var(--blue);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
 body {
   background-color: #000;
   margin: 0;
