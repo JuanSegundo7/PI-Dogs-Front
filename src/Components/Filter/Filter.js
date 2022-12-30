@@ -28,7 +28,7 @@ export default function Filter() {
       <article id="rigth-filter-side">
         <Searchbar />
       </article>
-      <article id="left-filter-side" className="desktop-visible">
+      <article className="left-filter-side">
         <Dropdown info={Temperaments}/>
         <Dropdown info={Order}/>
         <Dropdown info={Weight}/>

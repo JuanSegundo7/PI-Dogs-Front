@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getOneDog, cleanDetail } from "../../Redux/Actions/Actions"
 import { useParams } from "react-router-dom"
 
-import "./Dog.css"
+import "./DogDetail.css"
 import Spinner from "../../Components/Spinner/Spinner"
 import DogDetail from "./DogDetail"
 

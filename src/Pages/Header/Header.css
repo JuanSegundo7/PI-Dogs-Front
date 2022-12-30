@@ -59,7 +59,7 @@ nav ul{
     cursor: pointer;
 }
 
-#burger-article article{
+.burger-article article{
     flex-direction: column;
     align-items: flex-end;
 }

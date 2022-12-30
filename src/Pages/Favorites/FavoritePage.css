@@ -3,7 +3,7 @@
 #favorites{
     background-color: var(--background-color-top);
     padding: 1em;
-    margin: 1em 4.5em;
+    margin: 1em 0;
     border-radius: 15px;
     height: 100%;
     display: flex;
@@ -42,4 +42,16 @@
 
 #flex-favorites > .metronome{
     top: 0;
+}
+
+#favorite-spinner{
+    top: 10em;
+    position: absolute;
+}
+
+@media (min-width: 1000px) {
+    #favorites{
+        margin: 1em 4.5em;
+    }
+    
 }

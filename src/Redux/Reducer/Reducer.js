@@ -1,4 +1,4 @@
-import {GET_TEMPERAMENTS, GET_ALL_DOGS, GET_QUERY, CLEAN_DETAIL, SEARCH_REQ, SUCCESSFUL_REQ, PAGINATION_VALUES, GET_ONE_DOG, FILTER, NO_FOUND_DOG, COPY_DOGS, ADD_FAVORITE} from '../Actions/Actions'
+import {GET_TEMPERAMENTS, GET_ALL_DOGS, GET_QUERY, CLEAN_DETAIL, SEARCH_REQ, SUCCESSFUL_REQ, PAGINATION_VALUES, GET_ONE_DOG, FILTER, NO_FOUND_DOG, COPY_DOGS, ADD_FAVORITE, FILL_FAVORITES, MATCH_FAVORITE} from '../Actions/Actions'
 
 const initialState = {
     dogs: [],
@@ -7,12 +7,15 @@ const initialState = {
     loading: false,
     pagination: {},
     query: "",
-    favorites: [],
     changeNumber: 1,
+    UpdateFavorite: 1,
     temps: [],
     filtered: [],
     filter: false,
-    apiOrDb: "ALL"
+    apiOrDb: "ALL",
+    Favorites: [],
+    FavoritesCopy: [],
+    FavoriteBoolean: false,
 }
 
 
@@ -232,11 +235,52 @@ const rootReducer = (state = initialState, action) => {
             break;
         }
         case ADD_FAVORITE: {
+            let totalFavorites = [...state.Favorites];
+
+            if (state.Favorites.includes(action.payload)) {
+                totalFavorites = totalFavorites.filter(
+                (unFavorito) => unFavorito !== action.payload
+                );
+            } else {
+                totalFavorites.push(action.payload);
+            }
+            if (state.Favorites.length === 1) localStorage.removeItem("favorites");
+
             return {
                 ...state,
-                favorites: [...state.favorites, action.payload]
-            }
+                Favorites: totalFavorites,
+                UpdateFavorite: state.UpdateFavorite + 1,
+            };
         }
+        case FILL_FAVORITES: {
+            const myLocalStorage = localStorage.getItem("favorites");
+            if (myLocalStorage && myLocalStorage.length) {      
+              for (let i = 0; i < myLocalStorage.length; i++) {        
+                if (!state.Favorites.includes(parseInt(myLocalStorage[i]))) {
+                  state.Favorites.push(parseInt(myLocalStorage[i]));
+                }
+              }
+            }
+      
+            return {
+              ...state,
+            };
+        }
+        case MATCH_FAVORITE: {
+            const allDogs = state.dogs;
+            const favorites =
+                allDogs &&
+                allDogs.length &&
+              state.Favorites?.map((fav) => {
+                return allDogs?.find((p) => p.id === fav);
+              });
+      
+            return {
+              ...state,
+              FavoritesCopy: favorites,
+              FavoriteBoolean: true,
+            };
+          }
         case SEARCH_REQ: {
             return {
                 ...state,

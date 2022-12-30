@@ -9,11 +9,17 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 2em 0;
+    margin: 1em 0;
+    grid-gap: 15px;
     gap: 15px;
     padding: 0 5%;
     height: 100%;
 }
+
+.mobile-visible .metronome{
+    top: 1em;
+}
+
 
 #flex-dog-error{
     height: 34em;
@@ -44,5 +50,6 @@
     }
     #flex-dogs {
         min-height: 86vh;
+        margin: 2em 0;
     }
 }

@@ -13,14 +13,15 @@ export const FILTER = "FILTER";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 export const NO_FOUND_DOG = "NO_FOUND_DOG";
 export const ADD_FAVORITE = "ADD_FAVORITE";
+export const FILL_FAVORITES = "FILL_FAVORITES";
+export const MATCH_FAVORITE = "MATCH_FAVORITE";
 export const COPY_DOGS = "COPY_DOGS";
 export const DELETE_DOG = "DELETE_DOG";
 
-//hola
-// const baseUrl = "http://localhost:3001/dogs"
-// const baseUrlTemps = "http://localhost:3001/temperaments"
-const baseUrl = "https://pi-dogs-back-production-9a83.up.railway.app/dogs"
-const baseUrlTemps = "https://pi-dogs-back-production-9a83.up.railway.app/temperaments"
+const baseUrl = "http://localhost:3001/dogs"
+const baseUrlTemps = "http://localhost:3001/temperaments"
+// const baseUrl = "https://pi-dogs-back-production-9a83.up.railway.app/dogs"
+// const baseUrlTemps = "https://pi-dogs-back-production-9a83.up.railway.app/temperaments"
 
 export const postDog = (obj) => {
     try{
@@ -75,10 +76,23 @@ export const getQuery = (query) => async (dispatch) => {
     }
 }
 
+export const fillFavorites = (FavoritesArray) => (dispatch) => {
+    return dispatch({
+      type: FILL_FAVORITES,
+      payload: FavoritesArray,
+    });
+};
+  
+
 export const addFavorite = (id) => dispatch => {
     return dispatch({type: ADD_FAVORITE, payload: id})
+
+
 }
 
+export const matchFavorite = () => (dispatch) => {
+    return dispatch({ type: MATCH_FAVORITE });
+};
 
 export const paginationValues = (obj) => dispatch => {
     return dispatch({type: PAGINATION_VALUES, payload: obj})

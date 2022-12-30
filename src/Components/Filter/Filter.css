@@ -1,9 +1,11 @@
 #Filter{
     display: flex;
-    padding: 2em 5%;
+    padding: 1em;
+    height: 22em;
     margin: 0 0.5em;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #Filter span{
@@ -23,6 +25,14 @@
     width: 100%;
 }
 
+.left-filter-side{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 1em;
+    justify-content: space-around;
+}
+
 #Filter select, .dropbtn{
     height: 40px;
     width: 150px;
@@ -35,14 +45,19 @@
     border: none;
 }
 
-
-
 @media (min-width: 1000px) {
     #Filter{
         flex-direction: column;
-        height: 12em;
+        height: 10em;
         justify-content: space-between;
+        padding: 2em 5%;
     }
+
+    .left-filter-side{
+        flex-direction: row;
+        margin-top: 1em;
+    }
+    
 }
 
 @media (min-width: 1300px){
@@ -50,5 +65,10 @@
         flex-direction: row;
         height: auto;
         justify-content: space-between;
+    }
+
+    .left-filter-side{
+        flex-direction: row;
+        margin: 0;
     }
 }

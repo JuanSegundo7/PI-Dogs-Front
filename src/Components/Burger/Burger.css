@@ -1,8 +1,13 @@
+#burger{
+    z-index: 99;
+}
+ 
 #burger > span{
     display: block;
     width: 28px;
     height: 2px;
     background-color: #fff;
+
 }
 
 #burger > span:not(:last-child){

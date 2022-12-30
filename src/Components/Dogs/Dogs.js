@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { getAllDogs, paginationValues } from "../../Redux/Actions/Actions"
 
+import SadDog from "./img/sad-dog.jpg"
 import DogCard from "./Card/DogCard"
 import Spinner from "../Spinner/Spinner"
 
@@ -13,6 +14,7 @@ export default function Dogs() {
     const Filter = useSelector((state) => state.filter)
     const Number = useSelector((state) => state.changeNumber)
 
+    const [isMobile, setIsMobile] = useState(window.innerWidth)
 
     const [currentPage, setCurrentPage] = useState(1)
     const [dogsPerPage, setDogsPerPage] = useState(8)
@@ -22,8 +24,11 @@ export default function Dogs() {
 
     const currentDogs = Filter ? (typeof Filtered[0] === "string" ? Filtered : Filtered.slice(indexFirstDog, indexLastDog)) : Dogs.slice(indexFirstDog, indexLastDog)
     
-    console.log(Filtered)
-    console.log(Filter)
+    
+    window.addEventListener("resize", function() {
+      setIsMobile(window.innerWidth)
+    });
+
 
     useEffect(() => {
       dispatch(getAllDogs())
@@ -31,12 +36,12 @@ export default function Dogs() {
       setCurrentPage(1)
     }, [dispatch, setCurrentPage, Number])
     
-    return <article id="flex-dogs"> 
+    return <article id="flex-dogs" className={isMobile < 1000 ? "mobile-visible" : "desktop-visible"}>
       { !Dogs.length ? <Spinner /> 
         : (currentDogs ? typeof currentDogs[0] === "string" ? currentDogs.map(error => {
           return (
             <article id="flex-dog-error">
-              <img src="https://cdn.shopify.com/s/files/1/0079/3287/0756/articles/sad-dog-spot-the-signs-and-cheer-them-up_1200x1200.jpg?v=1620757126"/>
+              <img src={SadDog}/>
               <h1>{error}</h1>
             </article>
           )

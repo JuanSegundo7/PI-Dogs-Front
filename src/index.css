@@ -50,10 +50,10 @@ body::-webkit-scrollbar-thumb{
   overflow: hidden;
 }
 
-body::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
+/* body::-webkit-scrollbar-button {
+  width: 100px;
+  height: 300px;
+} */
 
 body {
   background-color: #000;
@@ -80,11 +80,11 @@ select{
   border: 1px solid #d6d6e7;
 }
 
-.mobile-visible {
+#mobile-visible {
   display: flex;
 }
 
-.desktop-visible{
+#desktop-visible{
   display: none
 }
 
@@ -119,11 +119,11 @@ ul{
 }
 
 @media (min-width: 1000px) {
-  .mobile-visible {
+  #mobile-visible {
     display: none;
   }
   
-  .desktop-visible{
+  #desktop-visible{
     display: flex;
   }
 }
