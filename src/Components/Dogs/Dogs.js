@@ -11,6 +11,7 @@ export default function Dogs() {
 
   const Dogs = useSelector((state) => state.dogs);
   const Filtered = useSelector((state) => state.filtered);
+  const PostDog = useSelector((state) => state.newDog);
   const Filter = useSelector((state) => state.filter);
   const Number = useSelector((state) => state.changeNumber);
 
@@ -36,7 +37,7 @@ export default function Dogs() {
     dispatch(getAllDogs());
     dispatch(paginationValues({ dogsPerPage, setCurrentPage }));
     setCurrentPage(1);
-  }, [dispatch, setCurrentPage, Number]);
+  }, [dispatch, setCurrentPage, Number, PostDog]);
 
   return (
     <article

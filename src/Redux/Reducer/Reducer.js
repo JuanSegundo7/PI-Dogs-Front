@@ -12,6 +12,7 @@ import {
   COPY_DOGS,
   ADD_FAVORITE,
   FILL_FAVORITES,
+  POST_DOG,
   MATCH_FAVORITE,
 } from "../Actions/Actions";
 
@@ -19,6 +20,7 @@ const initialState = {
   dogs: [],
   copyDogs: [],
   dog: {},
+  newDog: {},
   loading: false,
   pagination: {},
   query: "",
@@ -329,6 +331,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         filter: true,
         filtered: ["The searched dog was not found"],
+      };
+    }
+    case POST_DOG: {
+      return {
+        ...state,
+        newDog: action.payload,
       };
     }
     case COPY_DOGS: {
