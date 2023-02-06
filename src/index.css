@@ -40,11 +40,11 @@ fieldset {
   outline: none;
 }
 
-body::-webkit-scrollbar{
+.dropdown-content::-webkit-scrollbar, body::-webkit-scrollbar{
   width: 2px;
 }
 
-body::-webkit-scrollbar-thumb{
+.dropdown-content::-webkit-scrollbar, body::-webkit-scrollbar-thumb{
   background: var(--blue);
   border-radius: 20px;
   overflow: hidden;

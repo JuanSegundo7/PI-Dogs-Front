@@ -33,7 +33,7 @@ const Dog = () => {
         <>
         <Header />
         <section id="Detail">
-            {!Dog || Object.keys(Dog).length === 0 ? <Spinner /> :
+            {!Dog || !Object.keys(Dog).length  ? <Spinner /> :
                 <DogDetail id={id} name={name} min_height={min_height} max_height={max_height} origin={origin} max_weight={max_weight} min_weight={min_weight} life_span={life_span} image={image} temperaments={temperaments}/>
             }
         </section>

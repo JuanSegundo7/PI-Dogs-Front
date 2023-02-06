@@ -5,6 +5,7 @@ import TrashCan from "../../Components/Eliminate/Eliminate"
 import "./DogDetail.css"
 
 const Dog = ({id, min_height, max_height, min_weight, max_weight, life_span, image, name, origin, temperaments}) => {
+    console.log(name)
     return (
         <article id="detail-article">
             <article id="flex-icons">
