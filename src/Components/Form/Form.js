@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postDog, getAllDogs } from "../../Redux/Actions/Actions";
 import "./Form.css";
@@ -39,9 +39,14 @@ export default function Form({ setState }) {
     if (!error) {
       dispatch(postDog(dataDog));
       setState(false);
-      dispatch(getAllDogs());
     }
   };
+
+  useEffect(() => {
+    return function () {
+      dispatch(getAllDogs());
+    };
+  }, [dispatch]);
 
   const handleName = (e) => {
     const value = e.target.value;
