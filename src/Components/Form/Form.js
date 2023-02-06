@@ -38,7 +38,7 @@ export default function Form({ setState }) {
 
     if (!error) {
       dispatch(postDog(dataDog));
-      // dispatch(getAllDogs())
+      dispatch(getAllDogs());
       setState(false);
     }
   };
