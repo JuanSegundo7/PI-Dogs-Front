@@ -27,6 +27,7 @@ const baseUrlTemps =
 export const postDog = (obj) => (dispatch) => {
   try {
     axios.post(baseUrl, obj);
+    getAllDogs();
     return { type: POST_DOG };
   } catch (e) {
     console.log(e);
