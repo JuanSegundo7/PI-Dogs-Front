@@ -20,6 +20,7 @@
 #DogCard img{
     width: -webkit-fill-available;
     height: 15em;
+    object-fit: cover;
     transition: all 0.6s;
 }
 
